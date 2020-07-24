@@ -1,0 +1,63 @@
+body {
+  font-family: sans-serif;
+}
+
+/* p{
+margin-top: 0;
+} */
+
+.home {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7db9e8+0,207cca+94,1e5799+100 */
+  background: #7db9e8;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #7db9e8 0%, #207cca 94%, #1e5799 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #7db9e8 0%, #207cca 94%, #1e5799 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #7db9e8 0%, #207cca 94%, #1e5799 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7db9e8', endColorstr='#1e5799', GradientType=0);
+  /* IE6-9 */
+
+  height: 100vh;
+}
+
+.homeTitle {
+  margin-left: 27%;
+  margin-bottom: 20px;
+  padding-top: 50px;
+  font-size: 25px;
+  color: aliceblue;
+}
+
+.inputField {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logIn {
+  margin-bottom: 20px;
+  padding-top: 50px;
+  font-size: 25px;
+  color: aliceblue;
+}
+
+.inputFieldLogin {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+  position: absolute;
+  color: aliceblue;
+  font-style: italic;
+  font-size: 15px;
+  opacity: 0.5;
+}

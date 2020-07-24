@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Ticketac</title>
+</head>
+
+<body>
+
+    <!-- NAVBAR HEADER Boostrap -->
+    <%- include('navbar'); %>
+
+
+    <div class="home">
+
+        <!-- Test title -->
+        <h3 class="homeTitle">Tickets available : </h3>
+
+        <!-- Input Field -->
+
+        <% if(journeyTab.length > 0){ %>
+
+        <div class="resultField">
+
+            <!-- Result Number 1 -->
+
+            <% for(let i = 0; i < journeyTab.length; i++){ %>
+
+            <div class="card w-50">
+                <div class="card-body resultCard">
+                    <!-- <div>Paris / Lille</div> -->
+                    <div> <%= journeyTab[i].departure %> / <%= journeyTab[i].arrival %></div>
+                    <div><small class="text-muted">train departure at : <%= journeyTab[i].departureTime %> pm</small>
+                    </div>
+                    <div style="display: flex;justify-content: center;align-items: center;">
+                        <div style="font-size: 20px;"><%= journeyTab[i].price %> €</div>
+
+
+                        <form action="/myTicket" method="POST">
+                            <input type="hidden" name="ticketDeparture" value=<%= journeyTab[i].departure %>>
+                            <input type="hidden" name="ticketArrival" value=<%= journeyTab[i].arrival%>>
+                            <input type="hidden" name="ticketDepartureTime" value=<%= journeyTab[i].departureTime %>>
+                            <input type="hidden" name="ticketPrice" value=<%= journeyTab[i].price %>>
+                            <input type="hidden" name="ticketDate" value="<%= journeyTab[i].date %>">
+                            <input type="hidden" name="userId" value=<%= userId %>>
+                            <button class="btn btn-danger mx-sm-3">OK</button>
+                        </form>
+
+                        <!-- <a href="/myTicket" class="btn btn-danger mx-sm-3">OK</a> -->
+                    </div>
+                </div>
+            </div>
+
+            <% } %>
+
+        </div>
+
+        <% }else{ %>
+
+        <div class="noTrainMessage">
+            <h3 style="color:white;margin-bottom: 15px;">Oops ! No trains available... </h3>
+            <a href="/index" class="btn btn-danger mx-sm-3">Home</a>
+        </div>
+
+        <% } %>
+
+        <%- include('footer'); %>
+    </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
+
+</html>

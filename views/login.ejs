@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Ticketac</title>
+</head>
+
+<body>
+
+    <body>
+
+        <%- include('navbar'); %>
+
+        <div>
+
+            <div class="home">
+
+                <!-- Alert message -->
+                <% if(alertMessage.length > 0){ %>
+                <div style="text-align: center; padding-top: 20px;">
+                    <h3 style="color:red;">No account found,<br>You need to Sign-up first </h3>
+                </div>
+                <% } %>
+                <!-- Input Field -->
+                <div class="inputFieldLogin">
+
+                    <!-- Sign-In -->
+                    <form style="text-align: center;margin: 50px;" action="/sign-in" method="POST">
+
+                        <!-- Login title -->
+                        <h3 class="logIn">Sign-in : </h3>
+
+
+
+                        <div class="form-group inputResume">
+                            <input name="signInEmail" type="email" class="form-control" id="inputEmailSI"
+                                placeholder="Email">
+                        </div>
+
+                        <div class="form-group inputResume">
+                            <input name="signInPassword" type="password" class="form-control" id="inputPasswordSI"
+                                placeholder="Password">
+                        </div>
+
+                        <button type="submit" class="btn btn-danger">Confirm</button>
+
+                    </form>
+
+                    <!-- Sign-up -->
+                    <form style="text-align: center;" action="/sign-up" method="POST">
+
+                        <!-- Login title -->
+                        <h3 class="logIn">Sign-up : </h3>
+
+                        <div class="form-group inputResume">
+                            <input name="signUpFirstName" type="text" class="form-control " id="inputFirstNameSU"
+                                placeholder="FirstName">
+                        </div>
+
+
+                        <div class="form-group inputResume">
+                            <input name="signUpName" type="text" class="form-control " id="inputNameSU"
+                                placeholder="Name">
+                        </div>
+
+
+
+                        <div class="form-group inputResume">
+                            <input name="signUpEmail" type="text" class="form-control" id="inputEmailSU"
+                                placeholder="Email">
+                        </div>
+
+                        <div class="form-group inputResume">
+                            <input name="signUpPassword" type="password" class="form-control" id="inputPasswordSU"
+                                placeholder="Password">
+                        </div>
+
+                        <button type="submit" class="btn btn-danger">Confirm</button>
+
+                    </form>
+
+                </div>
+
+
+                <%- include('footer'); %>
+            </div>
+
+
+
+    </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+</html>
